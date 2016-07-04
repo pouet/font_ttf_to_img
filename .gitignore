@@ -31,3 +31,12 @@
 # Debug files
 *.dSYM/
 *.su
+
+# TTF files
+*.ttf
+
+# BMP files
+*.bmp
+
+# hidden files
+.*
