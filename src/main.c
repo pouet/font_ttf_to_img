@@ -81,6 +81,7 @@ int		writeSurface(void) {
 		s = r;
 		pString[0] = i + ' ';
 		pTmp = TTF_RenderText_Solid(gVars.pFont, pString, color);
+		s.x += (pTmp->h - r.w) / 2;
 		SDL_BlitSurface(pTmp, NULL, pSfc, &s);
 		SDL_FreeSurface(pTmp);
 		r.x += r.w;
