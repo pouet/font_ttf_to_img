@@ -47,7 +47,7 @@ int		writeSurface(void) {
 	SDL_Color color = { 0, 0, 0, 0 };
 	SDL_Surface *pSfc;
 	SDL_Surface *pTmp;
-	SDL_Rect r;
+	SDL_Rect r, s;
 	int i;
 
 	Uint32 rmask, gmask, bmask, amask;
@@ -78,9 +78,10 @@ int		writeSurface(void) {
 
 	pString[1] = '\0';
 	for (i = 0; i < SIZE_TAB; i++) {
+		s = r;
 		pString[0] = i + ' ';
 		pTmp = TTF_RenderText_Solid(gVars.pFont, pString, color);
-		SDL_BlitSurface(pTmp, NULL, pSfc, &r);
+		SDL_BlitSurface(pTmp, NULL, pSfc, &s);
 		SDL_FreeSurface(pTmp);
 		r.x += r.w;
 	}
